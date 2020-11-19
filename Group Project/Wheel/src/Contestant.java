@@ -1,55 +1,69 @@
 
 public class Contestant {
-	private int Player_Number ;
-    private String Name;
-    private int Grand_Total;
-
+	private int player_Number ;
+    private String name;
+    private int grand_Total;
+    private int round_Balance;
 	public Contestant() {
-		 Player_Number =0;
-		 Name="";
-		 Grand_Total=0;
+		 player_Number =0;
+		 name="";
+		 grand_Total=0;
+		 round_Balance=0;
 	}
 
-	public Contestant(int player_number, String name,int grand_total) {
-		Player_Number= player_number;
-	    Name = name;
-	    Grand_Total = grand_total;
+	public Contestant(int player_number, String name,int grand_total,int round_Balance) {
+		this.player_Number= player_number;
+	    this.name = name;
+	    this.grand_Total = grand_total;
+	    this.round_Balance=round_Balance;
 	}
 
 	public Contestant(Contestant contestant) {
-		Player_Number = contestant.Player_Number;
-	    Name = contestant.Name;
-		Grand_Total = contestant.Grand_Total;
+		player_Number = contestant.player_Number;
+	    this.name = contestant.name;
+		this.grand_Total = contestant.grand_Total;
+		this.round_Balance= contestant.grand_Total;
 	}
 
-	public int GetPlayer_Number(){
-	return Player_Number;
+	public int getPlayer_Number(){
+	return player_Number;
 	}
 
     public String GetName(){
-	return Name;
+	return name;
 	}
 	
-	public int GetGrand_Total(){
-	return Grand_Total;
+	public int getGrand_Total(){
+	return grand_Total;
 	}
 	
 
-	public void SetPlayer_number(int player_number){
-		Player_Number= player_number;
+	public void setPlayer_number(int player_number){
+		this.player_Number= player_number;
 	}
 
-    public void SetName(String name ){
-		Name = name;
+    public void setName(String name ){
+		this.name = name;
 	}
 
-    public void SetGrand_Total(int grand_total){
-	    Grand_Total = grand_total;
+    public void setGrand_Total(int grand_total){
+	    this.grand_Total = grand_total;
 	}
 	
+	public int getRound_Balance() {
+		return round_Balance;
+	}
+
+	public void setRound_Balance(int round_Balance) {
+		this.round_Balance = round_Balance;
+	}
+
 	public void Display(){
-        System.out.println("Player Number is"+Player_Number);
-        System.out.println("Player Name is"+Name);
-        System.out.println("Your current Grand Total is"+Grand_Total);
+        System.out.println("Player Number is"+player_Number);
+        System.out.println("Player Name is"+name);
+        System.out.println("Your current Grand Total is"+grand_Total);
+        System.out.println("Your round balance is "+round_Balance);
     }
+
+	
 }

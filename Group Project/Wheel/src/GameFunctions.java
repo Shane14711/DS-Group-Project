@@ -1,8 +1,9 @@
-import java.util.Random;
+import java.util.*;
 public class GameFunctions {
 	private Wheelclass wheel;
 	private WheelLinkedlist link;
-
+	
+	Scanner input=new Scanner(System.in);
 	
 	public int sectionIdentifier(int x, int y)
 	{
@@ -75,5 +76,57 @@ public class GameFunctions {
 			}
 			
 		}
+	}
+	public void playerBaseCreator()
+	{
+		int i=0;
+		
+		String player_Name="";
+		for (i=1; i<3; i++)
+		{
+			System.out.println("Enter name player number "+i+ "name "+player_Name);
+			player_Name=input.next();
+			
+			Contestant player=new Contestant();
+			player.setName(player_Name);
+			player.setGrand_Total(0);
+			player.setPlayer_number(i);
+			
+			CLinkedList playerBase=new CLinkedList();
+			playerBase.addAtBack(player);
+			
+		}
+		System.out.println("Player was added");
+		
+	}
+	public int playMenu()
+	{
+		int pOption=0, flag=0;
+		while(flag!=1) {
+			System.out.println("\n1. Spin The Wheel");
+			System.out.println("2. Buy A vowel($150)");
+			System.out.println("3. Guess the entire word");
+			System.out.println("4. Guess another letter");
+			pOption=input.nextInt();
+			if (pOption == 1 || pOption == 2 || pOption == 3 || pOption == 4) {
+	            flag = 1;
+			}
+		}
+		return pOption;
+	}
+	
+	public int continueGame() {
+		int pOption=0,flag=0;
+		while(flag !=1) {
+		System.out.println("Would you like to play again");
+		System.out.println("1. Yes");
+		System.out.println("2. No");
+		pOption=input.nextInt();
+		
+		if (pOption == 1 || pOption == 2) {
+            flag = 1;
+		}
+	}
+		return pOption;
 	}
 }

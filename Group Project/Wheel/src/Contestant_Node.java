@@ -1,82 +1,56 @@
 
 public class Contestant_Node {
-	  private Contestant Data;
-	  private Contestant_Node PrevNode;
-	  private Contestant_Node NextNode;
+	  private Contestant data;
+	  private Contestant_Node nextNode;
 
 
 	  public Contestant_Node ()
 	  {
-	    Data = new Contestant ();
-	    PrevNode = null;
-	    NextNode = null;
+	    nextNode = null;
 	  }
 
 
-	  public Contestant_Node (Contestant contestant, Contestant_Node nextNode, Contestant_Node prevNode)
+	  public Contestant_Node (Contestant data)
 	  {
-	    Data = new Contestant (contestant);
-	    PrevNode = prevNode;
-	    NextNode = nextNode;
+	    this.data=data;
 	  }
 
 
-	  public Contestant_Node (Contestant contestant)
+	  public Contestant_Node (Contestant data, Contestant_Node nextNode)
 	  {
-	    Data = new Contestant (contestant);
-	    PrevNode = null;
-	    NextNode = null;
+	    this.data=data;
+	    this.nextNode=nextNode;
 	  }
 
-
-	  public Contestant_Node (int player_number, String name, int grand_total)
+	  public Contestant getData ()
 	  {
-	    Data = new Contestant (player_number, name, grand_total);
-	    PrevNode = null;
-	    NextNode = null;
+	    return data;
 	  }
 
-	  public Contestant_Node (Contestant_Node contestant_node)
+	  public Contestant_Node getNextNode ()
 	  {
-	    Data = new Contestant (contestant_node.Data);
-	    PrevNode = contestant_node.PrevNode;
-	    NextNode = contestant_node.NextNode;
+	    return nextNode;
 	  }
 
-	  public Contestant GetData ()
+	  public void setData (Contestant data)
 	  {
-	    return Data;
+	    this.data=data;
 	  }
 
-	  public Contestant_Node GetPrevNode ()
+	  public void setNextNode (Contestant_Node nextNode)
 	  {
-	    return PrevNode;
+	    this.nextNode = nextNode;
 	  }
-
-	  public Contestant_Node GetNextNode ()
+	  public void setDataGT(int GT)
 	  {
-	    return NextNode;
-	  }
-
-	  public void SetData (Contestant b)
-	  {
-	    Data = b;
-	  }
-
-	  public void SetPrevNode (Contestant_Node prevNode)
-	  {
-	    PrevNode = prevNode;
-	  }
-
-	  public void SetNextNode (Contestant_Node nextNode)
-	  {
-	    NextNode = nextNode;
+		  //sets the grand total directly.
+		  this.getData().setGrand_Total(GT);
 	  }
 
 
 	  public void Display ()
 	  {
-	    Data.Display ();
+	    data.Display ();
 	  }
 
 

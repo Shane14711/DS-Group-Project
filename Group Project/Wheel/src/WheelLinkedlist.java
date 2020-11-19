@@ -1,5 +1,5 @@
-
-public class WheelLinkedlist {
+import java.util.*;
+public class WheelLinkedlist  {
 	private WheelNode head;
 	private WheelNode tail;
 	
@@ -52,7 +52,7 @@ public class WheelLinkedlist {
 		return null;
 	}
 	
-	public void InsertIntoWheel(Wheelclass New)
+	public void insertIntoWheel(Wheelclass New)
 	{
 		WheelNode current= new WheelNode(New);
 		if(isEmpty()) {
@@ -87,7 +87,7 @@ public class WheelLinkedlist {
 		}
 	}
 	
-	public void DisplayWheel()
+	public void displayWheel()
 	{
 		if(!isEmpty())
 		{
@@ -102,4 +102,5 @@ public class WheelLinkedlist {
 			System.out.println("The list has nothing to display");
 		}
 	}
+	
 }

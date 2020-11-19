@@ -6,8 +6,14 @@ public class WheelNode {
 	
 	public WheelNode()
 	{
+		super();
 		nextNode=null;
 	}
+	
+	public WheelNode(String type, int value, Wheelclass sectionData) {
+		this.sectionData = sectionData;
+	}
+
 	public WheelNode(Wheelclass sectionData)
 	{
 		this.sectionData=sectionData;
@@ -17,19 +23,23 @@ public class WheelNode {
 		this.sectionData=sectionData;
 		this.nextNode=nextNode;
 	}
+	
 	public Wheelclass getSectionData() {
 		return sectionData;
 	}
+
 	public void setSectionData(Wheelclass sectionData) {
 		this.sectionData = sectionData;
 	}
+
 	public WheelNode getNextNode() {
 		return nextNode;
 	}
+
 	public void setNextNode(WheelNode nextNode) {
 		this.nextNode = nextNode;
 	}
-	
+
 	public void Display()
 	{
 		getSectionData().Displaywheel();
